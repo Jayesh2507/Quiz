@@ -1,0 +1,184 @@
+.app {
+  height: 100vh;
+  background: linear-gradient(#100241, black);
+  color: white;
+  display: flex;
+}
+
+.main {
+  width: 75%;
+  background: url("images/kbc.webp") no-repeat;
+  background-size: 100% 100%;
+  display: flex;
+  flex-direction: column;
+}
+.main .top {
+  height: 50%;
+  position: relative;
+}
+.main .top .timer {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 5px solid white;
+  font-size: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  bottom: 0px;
+  left: 110px;
+}
+.main .bottom {
+  height: 50%;
+}
+
+.pyramid {
+  width: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.moneyList {
+  list-style-type: none;
+  width: 100%;
+  padding: 20px;
+}
+
+.moneyListItem {
+  padding: 5px;
+}
+.moneyListItem .moneyListItemNumber {
+  font-size: 18px;
+  font-weight: 100;
+  display: inline-block;
+  width: 30%;
+}
+.moneyListItem .moneyListItemAmount {
+  font-size: 20px;
+  font-weight: 300;
+}
+.moneyListItem.active {
+  background-color: teal;
+  border-radius: 5px;
+}
+
+.information {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+}
+.information .question {
+  width: 80%;
+  border: 2px solid white;
+  border-radius: 10px;
+  text-align: center;
+  padding: 20px;
+  background: linear-gradient(#100241, black);
+  color: white;
+  font-size: 30px;
+  font-weight: 500;
+}
+.information .answers {
+  width: 80%;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+}
+.information .answers .answer {
+  border: 1px solid white;
+  border-radius: 15px;
+  text-align: center;
+  background: linear-gradient(#29043a, black);
+  padding: 10px;
+  font-size: 20px;
+  font-weight: 300;
+  position: relative;
+  z-index: 1;
+}
+.information .answers .answer:hover, .information .answers .answer.active {
+  background: rgb(22, 22, 235);
+}
+.information .answers .answer.wrong {
+  animation: wrong 3s ease forwards;
+}
+.information .answers .answer.correct {
+  animation: correct 3s ease forwards;
+}
+
+@keyframes correct {
+  0%, 22%, 42% {
+    background: rgb(22, 22, 235);
+  }
+  20%, 40%, 60% {
+    background: linear-gradient(#29043a, black);
+  }
+  62%, 100% {
+    background: green;
+  }
+}
+@keyframes wrong {
+  0%, 22%, 42% {
+    background: rgb(22, 22, 235);
+  }
+  20%, 40%, 60% {
+    background: linear-gradient(#29043a, black);
+  }
+  62%, 100% {
+    background: crimson;
+  }
+}
+.endText {
+  height: 100%;
+  color: white;
+  font-size: 50px;
+  font-weight: 300;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.start {
+  width: 250px;
+  height: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  position: relative;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+}
+.start .startInput {
+  border-radius: 5px;
+  text-align: center;
+  width: 100%;
+  border: none;
+}
+.start .startInput:focus {
+  outline: none;
+}
+.start .startBtn {
+  padding: 0px 10px;
+  border-radius: 5px;
+  font-weight: 500;
+}
+
+.disabled {
+  pointer-events: none;
+  opacity: 0.9;
+}
+
+@media (max-width: 500px) {
+  .moneyListItemNumber {
+    font-size: 18px;
+    font-weight: 100;
+    display: inline-block;
+  }
+}/*# sourceMappingURL=index.css.map */
